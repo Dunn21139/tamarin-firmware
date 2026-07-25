@@ -481,7 +481,7 @@ int main() {
         }
         
         tud_task();
-        tud_vendor_flush();
+        // tud_vendor_flush();  // absent in pinned TinyUSB
         tud_task();
         if (jtagEnabled) {
             if (!jtagInited) {
@@ -493,7 +493,7 @@ int main() {
             tamarin_probe_task(!serialEnabled);
         }
         tud_task();
-        tud_vendor_flush();
+        // tud_vendor_flush();  // absent in pinned TinyUSB
         tud_task();
         if (wantLeaveJtag){
             leave_jtag();
